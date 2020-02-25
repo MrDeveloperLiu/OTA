@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>安装软件</title>
+</head>
+<body>
+    <a click="install()">点击安装</a>
+</body>
+<script>
+    var appLink = "itms-services://?action=download-manifest&url="
+    var mainfestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist"
+    var exeCode = appLink + manifest
+    
+    function install() {
+        window.location.herf = exeCode
+    }
+</script>
+</html>
+
