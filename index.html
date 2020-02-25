@@ -12,10 +12,17 @@
     </div>
     
     <div style="text-align:center;color:#969799;font-size:14px;font-family:"PingFangSC-Regular";white-space:pre-wrap;">
-        <p style="width:100%">e代驾</p>
+        <p style="width:100%">e代驾-iOS客户端</p>
     </div>
-    <div style="text-align:center;background:#3B414D;font-size:16px;color:#ffffff;font-family:"PingFangSC-Regular";border-radius:2px;height:50px;width:80%">
-        <p  href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist">点击安装</p>
+    <div style="text-align:center;background:#3B414D;font-size:16px;color:#ffffff;font-family:"PingFangSC-Regular";border-radius:5px;height:80px;width:80%" onclick="install()">
+        <p style="width:100%">点击安装</p>
     </div>
 </body>
+<script>
+    function install() {
+        var manifestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist"
+        var appURL = "itms-services://?action=download-manifest&url=" + manifestURL
+        window.location.href = appURL
+    }
+</script>
 </html>
