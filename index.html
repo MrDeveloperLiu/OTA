@@ -7,15 +7,9 @@
   <title>安装软件</title>
 </head>
 <body>
-    <a onclick="install()" class="a" >点击安装</a>
+    <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist" >点击安装</a>
 </body>
 <script>
-    var mainfestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist"
-    var appLink = "itms-services://?action=download-manifest&url=" + mainfestURL
-    
-    function install() {
-        document.getElementById("a").href = appLink
-    }
 </script>
 </html>
 
