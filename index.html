@@ -10,12 +10,12 @@
     <a onclick="install()">点击安装</a>
 </body>
 <script>
-    var appLink = "itms-services://?action=download-manifest&url="
     var mainfestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist"
-    var exeCode = appLink + manifest
+    var appLink = "itms-services://?action=download-manifest&url=" + mainfestURL
     
     function install() {
-        window.location.href = exeCode
+<!--        alert(appLink);-->
+        window.location.href = appLink;
     }
 </script>
 </html>
