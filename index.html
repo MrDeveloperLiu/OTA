@@ -13,18 +13,41 @@
     
     <div style="text-align:center;color:#969799;font-size:14px;font-family:"PingFangSC-Regular";white-space:pre-wrap;">
         <p style="width:100%">e代驾-iOS客户端</p>
+        <p style="width:100%" id="agent"></p>
     </div>
-    <div style="text-align:center;font-family:"PingFangSC-Regular";font-size:16px;">
+    <div style="text-align:center;font-family:"PingFangSC-Regular";font-size:16px;" id="install">
         <button style="background:#3B414D;color:#ffffff;" onclick="install()">
             点击安装
         </button>
     </div>
 </body>
 <script>
+    document.addEventListener("readystatechange", function (e) {
+        if (e.target.readyState === 'complete') {
+              var userAgent = navigator.userAgent
+              document.getElementById("agent").innerText = userAgent
+        } else {
+            
+        }
+    })
+
     function install() {
+        var userAgent = navigator.userAgent
+        var Mac = userAgent.indexOf("Mac");
+        if (Mac != -1) { //mac
+            alert("请在iPhone系统中操作")
+            return
+        }
+        document.getElementById("install").style.display = "none"
+        var showClosure = function() {
+            document.getElementById("install").style.display = "block"
+        };
+        setTimeout(showClosure, 3000)
+                
         var manifestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/ios/manifest.plist"
         var appURL = "itms-services://?action=download-manifest&url=" + manifestURL
         window.location.href = appURL
     }
+
 </script>
 </html>
