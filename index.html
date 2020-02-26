@@ -33,8 +33,13 @@
 
     function install() {
         var userAgent = navigator.userAgent
-        var Mac = userAgent.indexOf("Mac");
-        if (Mac != -1) { //mac
+        var ie = userAgent.indexOf("Safari")
+        if (ie == -1) {
+            alert("请在Safari上打开")
+            return
+        }
+        var iPhone = userAgent.indexOf("iPhone")
+        if (iPhone == -1) {
             alert("请在iPhone系统中操作")
             return
         }
