@@ -4,57 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>安装软件</title>
+  <title>贝可多(Baked)私房烘焙</title>
 </head>
 <body>
-    <div style="text-align:center;margin-top:80px;">
-        <img id="icon" style="width:100px;height:100px;" src="./ios/edaijia.57x57.png"/>
+    <div id="div-wheel" class="wheel">
+        <img id="img-wheel" class="wheel"></img>
+        <ol id="ol-index" class="index"></ol>
     </div>
-    
-    <div style="text-align:center;color:#969799;font-size:14px;font-family:"PingFangSC-Regular";white-space:pre-wrap;">
-        <p style="width:100%">e代驾-iOS客户端</p>
-        <p style="width:100%" id="agent"></p>
+    <div id="div-product" class="product">
+        <ul id="ul-product" class="product"></ul>
     </div>
-    <div style="text-align:center;font-family:"PingFangSC-Regular";font-size:16px;" id="install">
-        <button style="background:#3B414D;color:#ffffff;" onclick="install()">
-            点击安装
-        </button>
+    <div id="div-qrcode" class="qrcode">
+        <img id="img-qrcode" class="qrcode"/>
     </div>
+        
 </body>
-<script>
-    document.addEventListener("readystatechange", function (e) {
-        if (e.target.readyState === 'complete') {
-              var userAgent = navigator.userAgent
-              document.getElementById("agent").innerText = userAgent
-        } else {
-            
-        }
-    })
-
-    function install() {
-        /*
-        var userAgent = navigator.userAgent
-        var ie = userAgent.indexOf("Safari")
-        if (ie == -1) {
-            alert("请在Safari上打开")
-            return
-        }
-        var iPhone = userAgent.indexOf("iPhone")
-        if (iPhone == -1) {
-            alert("请在iPhone系统中操作")
-            return
-        }
-         */
-        document.getElementById("install").style.display = "none"
-        var showClosure = function() {
-            document.getElementById("install").style.display = "block"
-        };
-        setTimeout(showClosure, 3000)
-                
-        var manifestURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/ios/manifest.plist"
-        var appURL = "itms-services://?action=download-manifest&url=" + manifestURL
-        window.location.href = appURL
-    }
-
-</script>
+<script src="config/config.js"></script>
+<script src="config/activity.js"></script>
+<script src="config/product.js"></script>
+<script src="js/common.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/lazy_img.js"></script>
+<script src="js/parse.js"></script>
+<script src="js/index/index-wheel.js"></script>
+<script src="js/index/index.js"></script>
+<link rel="stylesheet" href="js/index/index.css" type="text/css"></link>
 </html>

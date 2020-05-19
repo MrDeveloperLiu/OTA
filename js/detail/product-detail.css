@@ -1,0 +1,27 @@
+.img-icon{
+    width:100%;
+    background:lightgray;
+    margin:0;
+    padding:0;
+}
+
+.p-title{
+    font-family:"PingFangSC-Regular";
+    font-size:18px;
+    color:#19191a;
+    text-align:left;
+    width:80%;
+    height:30px;
+    display:inline-block;
+}
+
+.p-price{
+    font-family:"PingFangSC-Regular";
+    font-size:18px;
+    color:red;
+    text-align:right;
+    width:20%;
+    height:30px;
+    display:inline;
+    float:right;
+}
