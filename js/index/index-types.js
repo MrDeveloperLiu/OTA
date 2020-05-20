@@ -27,7 +27,10 @@ function installTypesView(datas) {
     }
     $("ul-types").appendChild(liProductFragment);
     $("ul-types").clickAt("types", function(e){
-        var param = {"id" : e.getter("data-id")};
+        var param = {
+            "id" : e.getter("data-id"),
+            "title" : e.innerText,
+        };
         var toURL = BDURLParser.buildURL("product-list.html", param);
         $goto(toURL);
     });

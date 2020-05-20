@@ -3,13 +3,12 @@ function onLoadComplete() {
     var lazyLoad = new imageLazyLoader("product");
     lazyLoad.start();
     
-    var array = [10045,10051,10034];
     //轮子
-    installWheelView(array);
+    installWheelView(BDWheelList);
     //种类
     installTypesView(BDMenuList);
     //活动推广
-    installActivityView(array);
+    installActivityView(BDCoopList);
     //产品列表
     installProductView(BDNewProductList);
     //二维码

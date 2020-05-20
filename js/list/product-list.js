@@ -11,7 +11,7 @@ function onLoadComplete() {
     //title
     var head = document.getElementsByTagName("head")[0];
     var title = head.getElementsByTagName("title")[0];
-    title.innerText = json.name;
+    title.innerText = json.title;
     
     var lazyLoad = new imageLazyLoader("product");
     lazyLoad.start();
@@ -21,7 +21,6 @@ function onLoadComplete() {
         var itemId = items[k];
         var item = BDProductInfoDict[itemId];
             
-        console.log(itemId, item);
         var li = $(document).$create("li")
         .setter("class")("product")
         .setter("data-idx")(k)
@@ -64,7 +63,6 @@ function onLoadComplete() {
         $goto(toURL);
     });
 
-    console.log(json);
 }
 
 onLoadComplete();

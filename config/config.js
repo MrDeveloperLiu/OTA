@@ -57,7 +57,8 @@ var BDNewProductList = [
     }
 ];
 
-
+var BDWheelList = [10045, 10051, 10034];
+var BDCoopList = [];
 
 
 var BDProductLinkList = [
