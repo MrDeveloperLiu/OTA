@@ -12,8 +12,8 @@ function $(flag) {
             retVal = document.getElementsByTagName(flag.split(":")[1]);
         }else if (flag.indexOf("#") != -1) {//tags <t>
             retVal = document.getElementsByName(flag.split("#")[1]);
-        }else if (flag.indexOf(".") != -1) {//id (class=)
-            retVal = document.getElementById(flag.split(".")[1]);
+        }else if (flag.indexOf(".") != -1) {//class (class=)
+            retVal = document.getElementsByClassName(flag.split(".")[1]);
         }else{
             retVal = document.getElementById(flag);
         }

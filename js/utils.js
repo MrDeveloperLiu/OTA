@@ -40,19 +40,11 @@ function ut_price(p) {
 }
 
 function ut_formatPrice(p){
-    return ut_price(p) + "元";
+   return "".concat("<strong>", ut_price(p), "</strong>", "元");
 }
 
 function ut_formatPriceWithDiscount(p, d){
     var price = (p * d) / 10000;
     var priceInt = Math.floor(price);
-    return priceInt + "元";
-}
-
-function ut_listenDomComplete(callback) {
-    document.addEventListener("readystatechange", function (e) {
-       if (e.target.readyState === 'complete') {
-           callback();
-       }
-    });
+    return "".concat("<strong>", priceInt, "</strong>", "元");
 }

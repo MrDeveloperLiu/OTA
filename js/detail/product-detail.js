@@ -22,7 +22,7 @@ function onLoadComplete() {
     titleView.innerText = json.name;
     //price
     var priceView = document.getElementById("price");
-    priceView.innerText = ut_formatPriceWithDiscount(json.price, json.discount);
+    priceView.innerHTML = ut_formatPriceWithDiscount(json.price, json.discount);
 }
 
 onLoadComplete();

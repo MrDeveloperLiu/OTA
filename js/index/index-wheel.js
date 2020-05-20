@@ -52,6 +52,9 @@ function WKWheel(datas, interval, callback) {
 
 
 function installWheelView(datas) {
+    if (datas.length <= 0) {
+        return;
+    }
     //推荐
     var realDatas = [];
     for (var i = 0; i < datas.length; i++) {
@@ -80,9 +83,10 @@ function installWheelView(datas) {
     //轮子
     var wheel = new WKWheel(realDatas, 8000, function(idx, total, prev){
 //        console.log("idx", idx, "total", total, "prev", prev);
+        //change img
         var it = realDatas[idx];
         $("img-wheel").setImage(it.img);
-        
+        //
         if (prev != -1) {
             //clear selected
             var prevId = "li-index-" + prev;
@@ -94,7 +98,7 @@ function installWheelView(datas) {
     });
     wheel.start();
     
-    
+    //change by user
     $("ol-index").clickAt("index", function(it){
         var idx = it.getter("data-idx");
         wheel.changeAtIndex(idx);

@@ -1,7 +1,8 @@
 var BDMenuList = [
     {
         "id" : 1001,
-        "name" : "曲奇系列",
+        "title" : "曲奇系列",
+        "icon" : "",
         "items" : [
                    10011,
                    10012,
@@ -12,14 +13,16 @@ var BDMenuList = [
     },
     {
         "id" : 1002,
-        "name" : "烧仙草系列",
+        "title" : "烧仙草系列",
+        "icon" : "",
         "items" : [
                     10021
         ]
     },
     {
         "id" : 1003,
-        "name" : "蛋糕系列",
+        "title" : "蛋糕系列",
+        "icon" : "",
         "items" : [
                    10031,
                    10032
@@ -27,7 +30,8 @@ var BDMenuList = [
     },
     {
         "id" : 1004,
-        "name" : "盒子蛋糕系列",
+        "title" : "盒子蛋糕系列",
+        "icon" : "",
         "items" : [
                    10041,
                    10042,
@@ -37,26 +41,33 @@ var BDMenuList = [
     }
 ];
 
-var BDNewProductList = {
-    "name" : "新品上架",
-    "items" : [
-               10045,
-               10051,
-               10034,
-    ]
-};
+var BDNewProductList = [
+    {
+        "id" : 1004,
+        "title" : "新品上架",
+        "icon" : "",
+        "items" : [
+                   10045,
+                   10051,
+                   10034,
+        ]
+    }
+];
+
+
+
 
 var BDProductLinkList = [
     {
-        "name" : "产品说明",
+        "title" : "产品说明",
         "url" : "product-info.html",
     },
     {
-        "name" : "成品展示",
+        "title" : "成品展示",
         "url" : "product-list.html?type=0",
     },
     {
-        "name" : "客户反馈",
+        "title" : "客户反馈",
         "url" : "product-list.html?type=1",
     }
 ]
