@@ -1,0 +1,69 @@
+body, div, ul, ol, p{
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+    font-family:"PingFangSC-Regular";
+}
+
+/*产品推荐*/
+ul.product{
+    width:100vw;
+    margin-top:20px;
+}
+
+p.product{
+    width:100%;
+    font-size:17px;
+    height:40px;
+    color:white;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    background:lightpink;
+}
+
+li.product{
+    float:left;
+    width:calc(30vw);
+    margin-bottom:2px;
+    margin-top:2px;
+    margin-left:calc(10vw / 6);
+    margin-right:calc(10vw / 6);
+    height:auto;
+/*    background:lightpink;*/
+}
+
+img.product{
+    position:relative;
+    width:80px;
+    left:calc((100% - 80px) / 2);
+    height:100px;
+    display:block;
+}
+
+p.product-price{
+    font-size:11px;
+    color:red;
+    display:inline-block;
+    position:relative;
+    left:calc((100% - 80px) / 2);
+/*    background:lightcyan;*/
+}
+
+p.product-discount{
+    font-size:11px;
+    color:lightgray;
+    text-decoration:line-through;
+    display:inline-block;
+    position:relative;
+    left:calc(((100% - 80px) / 2) + 10px);
+/*    background:lightcyan;*/
+}
+
+p.product-title{
+    font-size:12px;
+    text-align:center;
+/*    background:lightcyan;*/
+}
+
+

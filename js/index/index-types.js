@@ -9,7 +9,8 @@ function installTypesView(datas) {
         
         var li = $(document).$create("li")
         .setter("class")("types")
-        .setter("data-idx")(j);
+        .setter("data-idx")(j)
+        .setter("data-id")(item.id);
         
         var img = $(document).$create("img")
         .setter("class")("types")
@@ -26,7 +27,9 @@ function installTypesView(datas) {
     }
     $("ul-types").appendChild(liProductFragment);
     $("ul-types").clickAt("types", function(e){
-        console.log(e);
+        var param = {"id" : e.getter("data-id")};
+        var toURL = BDURLParser.buildURL("product-list.html", param);
+        $goto(toURL);
     });
 
 }

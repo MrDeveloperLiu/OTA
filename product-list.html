@@ -7,52 +7,18 @@
   <title></title>
 </head>
 <body>
-    
-    <ul id="ul-birthday" class="ul-cake"></ul>
-    
+    <div id="div-product" class="product">
+        <ul id="ul-product" class="product"></ul>
+    </div>
 </body>
-<style>
-    .ul-cake{
-        margin:0;
-        padding:0;
-    }
-    .li-cake{
-        list-style:none;
-    }
-    .cls-lazy-img{
-        width:100%;
-        background:lightgray;
-    }
-</style>
-<script src="config/birday.js"></script>
-<script src="js/parse.js"></script>
+<script src="config/config.js"></script>
+<script src="config/product.js"></script>
+<script src="js/common.js"></script>
 <script src="js/utils.js"></script>
 <script src="js/lazy_img.js"></script>
-<script src="js/cell/cell.js"></script>
-<script>
-    //main
-    function onLoadComplete() {
-        var lazyLoad = new imageLazyLoader("cls-lazy-img");
-        lazyLoad.start();
-
-        var data = BDURLParser.parse(self.location.search);
-        //title
-        var head = document.getElementsByTagName("head")[0];
-        var title = head.getElementsByTagName("title")[0];
-        
-        //act
-        var listView = document.getElementById("ul-birthday");
-
-        if (data.type == "1") {
-            title.innerText = "客户留言";
-            buildProductBirthdayCakeLists(listView, BDCakeCommentList);
-        }else{
-            title.innerText = "生日蛋糕";
-            buildProductBirthdayCakeLists(listView, BDBirthdayCakeList);
-        }
-    }
-
-    onLoadComplete();
-</script>
+<script src="js/parse.js"></script>
+<script src="js/index/index-product.js"></script>
+<script src="js/list/product-list.js"></script>
+<link rel="stylesheet" href="js/list/product-list.css" type="text/css"></link>
 </html>
 
