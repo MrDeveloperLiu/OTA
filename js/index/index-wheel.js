@@ -85,7 +85,7 @@ function installWheelView(datas) {
 //        console.log("idx", idx, "total", total, "prev", prev);
         //change img
         var it = realDatas[idx];
-        $("img-wheel").setImage(it.img);
+        $("img-wheel").setImage(it.thumb);
         //
         if (prev != -1) {
             //clear selected

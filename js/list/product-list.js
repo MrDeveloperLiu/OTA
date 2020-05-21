@@ -29,7 +29,7 @@ function onLoadComplete() {
         
         var img = $(document).$create("img")
         .setter("class")("product")
-        .setter("data-src")(item.img);
+        .setter("data-src")(item.thumb);
         li.appendChild(img);
 
         var title = $(document).$create("p")
