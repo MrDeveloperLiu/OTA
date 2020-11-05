@@ -52,3 +52,4 @@ function install() {
     window.location.href = appURL
 }
 
+
