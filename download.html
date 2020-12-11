@@ -59,34 +59,16 @@
     }
 
     function loadInfo() {
-        try {
-            var xhttp = new XMLHttpRequest()
-            xhttp.open("GET", dataURL, true)
-            xhttp.onreadystatechange = function() {
-              if (xhttp.readyState == 4){
-                  console.log(xhttp.status + '|' + xhttp.responseText)
-                  if (xhttp.status == 200){
-                      loadAppInfo(xhttp.responseText)
-                  }
-              }
-            };
-            xhttp.send(null)
-            
-        }
-        catch (e) {
+        var json = BDURLParser.parse(self.location.search)
         
-            document.getElementById("response").innerText = e
-        }
-    }
-
-    function loadAppInfo(resp) {
-        var assetVars = []
+        console.log("dl:" + JSON.stringify(json));
+        
                 
-        var icon = assetVars["display-image"]
-        var name = assetVars["title"]
-        var version = assetVars["bundle-version"]
-        var bundleId = assetVars["bundle-identifier"]
-        var software = assetVars["software-package"]
+        var icon = json["icon"]
+        var name = json["name"]
+        var version = json["version"]
+        var bundleId = json["bundle"]
+        var software = json["url"]
         
         document.getElementById("icon").src = icon
         document.getElementById("title").innerText = name
@@ -96,6 +78,7 @@
         document.getElementById("agent").innerText = userAgent
         
         appURL = software
+
     }
 
     function install() {
