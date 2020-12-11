@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>列表</title>
+</head>
+<body>
+    
+    
+    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
+        <ul id="ul_list"></ul>
+    </div>
+
+    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
+        <p id="p_error"></p>
+    </div>
+
+</body>
+<script src="3rd/query/parse.js"></script>
+<script>
+    var dataURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/data/list.json"
+            
+    document.addEventListener("readystatechange", function (e) {
+        if (e.target.readyState === 'complete') {
+            loadInfo()
+        }
+    })
+
+    function loadInfo() {
+        try {
+            var xhttp = new XMLHttpRequest()
+            xhttp.open("GET", dataURL, true)
+            xhttp.onreadystatechange = function() {
+              if (xhttp.readyState == 4){
+                  console.log(xhttp.status + '|' + xhttp.responseText)
+                  if (xhttp.status == 200){
+                      loadAppInfo(xhttp.responseText)
+                  }
+              }
+            };
+            xhttp.send(null)
+            
+        }
+        catch (e) {
+        
+            document.getElementById("p_error").innerText = e
+        }
+    }
+
+    function loadAppInfo(resp) {
+        var json = null
+        try {
+            json = JSON.parse(resp)
+        }
+        catch (e){
+            console.log(e);
+        }
+        
+        
+        var fragment = document.createDocumentFragment()
+        
+        for (it in json) {
+            var li = document.createElement("li")
+            li.innerText = it.name
+            fragment.appendChild(li)
+        }
+        
+        document.getElementById('ul_list').appendChild(fragment)
+    }
+
+
+</script>
+</html>
