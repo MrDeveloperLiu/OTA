@@ -14,6 +14,7 @@
     <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
         <p id="title" style="width:100%"></p>
         <p id="info" style="width:100%"></p>
+        <p id="machine" style="width:100%"></p>
         <p id="agent" style="width:100%"></p>
     </div>
     
@@ -46,14 +47,17 @@
         if (userAgent.indexOf('iPhone') != -1)
         {
             platform = 1
+            document.getElementById("title").innerText = "苹果"
         }
         else if (userAgent.indexOf('Android') != -1)
         {
             platform = 2
+            document.getElementById("title").innerText = "安卓"
         }
         else
         {
             platform = 3
+            document.getElementById("title").innerText = "其他浏览器"
         }
     }
 
