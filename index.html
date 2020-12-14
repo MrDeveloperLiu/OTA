@@ -47,10 +47,9 @@
     var datas = null
             
     function loadInfo() {
-        /*
         try {
             var xhr = new XMLHttpRequest()
-            xhr.open('GET', 'https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/list.json', true)
+            xhr.open('GET', '/list.json', true)
             xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
                 if (this.status == 200 || this.status == 304){
@@ -75,8 +74,6 @@
         
             document.getElementById("p_error").innerText = e
         }
-        */
-        loadAppInfo(AppList)
         
         var ul = document.getElementById('ul_list')
         ul.addEventListener("click", function (e) {
