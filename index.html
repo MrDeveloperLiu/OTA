@@ -48,6 +48,7 @@
     function loadInfo() {
         try {
             var xhttp = new XMLHttpRequest()
+            //xhttp.withCredentials = true
             xhttp.open("GET", "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/data/list.json", true)
             xhttp.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
