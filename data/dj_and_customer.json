@@ -1,0 +1,12 @@
+[
+ {
+    "id":"0",
+    "name":"e代驾-And用户端",
+    "icon":"edaijia.57x57.png",
+    "version":"9.9.2",
+    "bundle":"com.edaijia.enterprise",
+    "tm":0,
+    "info":"",
+    "url":"https://d.edaijia.cn/apk/ios_test/manifest.plist"
+ }
+]

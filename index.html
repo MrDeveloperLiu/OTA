@@ -42,14 +42,13 @@
 
 </body>
 <script src="3rd/query/parse.js"></script>
-<script src="list.js"></script>
 <script>
     var datas = null
             
     function loadInfo() {
         try {
             var xhr = new XMLHttpRequest()
-            xhr.open('GET', 'list.json', true)
+            xhr.open('GET', 'data/list.json', true)
             xhr.withCredentials = true
             xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
@@ -89,7 +88,7 @@
             if ("list" === target.getAttribute('class')) {
                 
                 var item = datas[target.getAttribute('idx')]
-                var toURL = BDURLParser.buildURL("download.html", item)
+                var toURL = BDURLParser.buildURL("h5/download.html", item)
                 window.location.href = toURL
             }
         });

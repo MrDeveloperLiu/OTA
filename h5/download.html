@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>安装软件</title>
+</head>
+<body>
+    <div style="text-align:center;margin-top:80px;">
+        <img id="icon" style="width:100px;height:100px;"/>
+    </div>
+    
+    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
+        <p id="title" style="width:100%"></p>
+        <p id="info" style="width:100%"></p>
+        <p id="machine" style="width:100%"></p>
+    </div>
+    
+    <div style="text-align:center;font-family:PingFangSC-Regular;font-size:16px;" id="install">
+        <button style="background:#3B414D;color:#ffffff;" onclick="install()">
+            点击安装
+        </button>
+    </div>
+    
+    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
+        <p id="response" style="width:100%"></p>
+    </div>
+
+</body>
+<script src="3rd/xml2json/xml2json.min.js"></script>
+<script src="3rd/query/parse.js"></script>
+<script>
+    var appURL = null
+    var platform = 0
+
+    function loadDevice() {
+        var userAgent = navigator.userAgent
+        if (userAgent.indexOf('iPhone') != -1)
+        {
+            platform = 1
+            document.getElementById("machine").innerText = "iOS"
+        }
+        else if (userAgent.indexOf('Android') != -1)
+        {
+            platform = 2
+            document.getElementById("machine").innerText = "Android"
+        }
+        else
+        {
+            platform = 3
+            document.getElementById("machine").innerText = "其他浏览器"
+        }
+    }
+
+    function loadInfo() {
+        var json = BDURLParser.parse(self.location.search)
+        
+        console.log("dl:" + JSON.stringify(json));
+        
+                
+        var icon = json["icon"]
+        var name = json["name"]
+        var version = json["version"]
+        var bundleId = json["bundle"]
+        var software = json["url"]
+        
+        document.getElementById("icon").src = icon
+        document.getElementById("title").innerText = name
+        document.getElementById("info").innerText = "版本:" + version + "  " + "bundle-id:" + bundleId
+                        
+        
+        appURL = software
+
+    }
+
+    function install() {
+        document.getElementById("install").style.display = "none"
+        var showClosure = function() {
+            document.getElementById("install").style.display = "block"
+        };
+        setTimeout(showClosure, 3000)
+                
+        if (platform == 1)
+        {
+            var toURL = "itms-services://?action=download-manifest&url=" + appURL
+            window.location.href = toURL
+        }
+        else if (platform == 2)
+        {
+            window.location.href = appURL
+        }
+        else
+        {
+            window.alert('sorry 目前仅支持 iPhone设备与android设备')
+        }
+    }
+
+    loadDevice();
+    loadInfo()
+
+</script>
+</html>
