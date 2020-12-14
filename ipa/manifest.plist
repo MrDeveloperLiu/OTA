@@ -35,7 +35,7 @@
 				<key>kind</key>
 				<string>software</string>
 				<key>platform-identifier</key>
-				<string>iphoneos</string>
+				<string>com.apple.platform.iphoneos</string>
 				<key>title</key>
 				<string>e代驾</string>
 			</dict>
