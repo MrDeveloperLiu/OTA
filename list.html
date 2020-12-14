@@ -58,9 +58,12 @@
             xhttp.open("GET", dataURL, true)
             xhttp.onreadystatechange = function() {
               if (xhttp.readyState == 4){
-                  console.log(xhttp.status + '|' + xhttp.responseText)
+                  var hrep = xhttp.status + '|' + xhttp.responseText
+                  console.log(hrep)
                   if (xhttp.status == 200){
                       loadAppInfo(xhttp.responseText)
+                  }else{
+                      document.getElementById("p_error").innerText = hrep
                   }
               }
             };
