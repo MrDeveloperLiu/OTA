@@ -2,7 +2,7 @@
  {
     "id":"0",
     "name":"e代驾-iOS用户端",
-    "icon":"edaijia.57x57.png",
+    "icon":"icon/ios/customer/edaijia.57x57.png",
     "version":"9.9.2",
     "bundle":"com.edaijia.enterprise",
     "tm":0,

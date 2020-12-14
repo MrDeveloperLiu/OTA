@@ -2,22 +2,22 @@
  {
     "id":"0",
     "name":"e代驾-iOS用户端",
-    "icon":"edaijia.57x57.png",
+    "icon":"icon/ios/customer/edaijia.57x57.png",
     "info":"",
-    "src":"dj_ios_customer.json"
+    "src":"data/dj_ios_customer.json"
  },
  {
     "id":"1",
     "name":"e代驾-And用户端",
-    "icon":"edaijia.57x57.png",
+    "icon":"icon/and/customer/edaijia.57x57.png",
     "info":"",
-    "src":"dj_and_customer.json"
+    "src":"data/dj_and_customer.json"
  },
  {
     "id":"2",
     "name":"e代驾-And司机端",
-    "icon":"edaijia.57x57.png",
+    "icon":"icon/and/driver/edaijia.57x57.png",
     "info":"",
-    "src":"dj_and_driver.json"
+    "src":"data/dj_and_driver.json"
  }
 ]

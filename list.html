@@ -46,9 +46,12 @@
     var datas = null
             
     function loadInfo() {
+        var json = BDURLParser.parse(self.location.search)
+        console.log("lst:" + JSON.stringify(json))
+
         try {
             var xhr = new XMLHttpRequest()
-            xhr.open('GET', 'data/apps.json', true)
+            xhr.open('GET', json.src, true)
             xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
                 if (this.status == 200 || this.status == 304){
@@ -73,7 +76,7 @@
         
             document.getElementById("p_error").innerText = e
         }
-        
+                
         var ul = document.getElementById('ul_list')
         ul.addEventListener("click", function (e) {
             
@@ -87,7 +90,7 @@
             if ("list" === target.getAttribute('class')) {
                 
                 var item = datas[target.getAttribute('idx')]
-                var toURL = BDURLParser.buildURL("list.html", item)
+                var toURL = BDURLParser.buildURL("download.html", item)
                 window.location.href = toURL
             }
         });
