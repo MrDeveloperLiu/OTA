@@ -49,7 +49,8 @@
     function loadInfo() {
         try {
             var xhr = new XMLHttpRequest()
-            xhr.open('GET', '/list.json', true)
+            xhr.open('GET', 'list.json', true)
+            xhr.withCredentials = true
             xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
                 if (this.status == 200 || this.status == 304){
@@ -68,7 +69,7 @@
             xhr.upload.onprogress = function(e) {
                 document.getElementById('p_error').innerText = 'onprogress-' + JSON.stringify(e)
             }
-            xhr.send(null)
+            xhr.send()
         }
         catch (e) {
         
