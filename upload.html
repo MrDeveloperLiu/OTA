@@ -11,7 +11,7 @@
     <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
         <input id="file" type="file"></input>
     </div>
-    <div style="text-align:center" id="software"></div>
+    <div style="text-align:center;" id="software"></div>
     <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
         <button onclick="onUpload()">查看</button>
     </div>
@@ -37,8 +37,9 @@
               
               var softwareElm = document.getElementById('software')
               softwareElm.innerHTML =
-              ` <img id="icon" style="width:57px;height:57px" src="${result.icon}"></img>
-                <p id="info">${appname}|${version}|${packeage}</p>
+              `
+              <img id="icon" style="width:57px;height:57px" src="${result.icon}"></img>
+              <p id="info">${appname}|${version}|${packeage}</p>                
               `
           })
         } catch (e) {
