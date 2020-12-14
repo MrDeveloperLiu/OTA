@@ -42,14 +42,15 @@
 
 </body>
 <script src="3rd/query/parse.js"></script>
+<script src="list.js"></script>
 <script>
     var datas = null
             
     function loadInfo() {
+        /*
         try {
             var xhr = new XMLHttpRequest()
             xhr.open('GET', 'https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/list.json', true)
-            xhr.setRequestHeader('Content-Type', 'application/json')            
             xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
                 if (this.status == 200 || this.status == 304){
@@ -68,12 +69,14 @@
             xhr.upload.onprogress = function(e) {
                 document.getElementById('p_error').innerText = 'onprogress-' + JSON.stringify(e)
             }
-            xhr.send('')
+            xhr.send(null)
         }
         catch (e) {
         
             document.getElementById("p_error").innerText = e
         }
+        */
+        loadAppInfo(AppList)
         
         var ul = document.getElementById('ul_list')
         ul.addEventListener("click", function (e) {
