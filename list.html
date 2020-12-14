@@ -6,16 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>列表</title>
 </head>
+<style>
+    body, ul
+    {
+        margin:0px;
+        padding:0px;
+        list-style-type:none;
+        font-family:"PingFangSC-Regular";
+    }
+    ul.cls_list
+    {
+        margin-top:50px;
+    }
+    li.list
+    {
+        height:60px;
+        line-height:60px;
+        width:calc(50vw);
+        margin-top:10px;
+        margin-left:calc(25vw);
+        background:#04BE02;
+        text-align:center;
+        color:#FFFFFF;
+    }
+    p.cls_error
+    {
+        text-align:center;
+        color:#000000;
+    }
+</style>
 <body>
     
-    
-    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
-        <ul id="ul_list"></ul>
-    </div>
-
-    <div style="text-align:center;color:#969799;font-size:14px;font-family:PingFangSC-Regular;">
-        <p id="p_error"></p>
-    </div>
+    <ul id="ul_list" class="cls_list"></ul>
+    <p id="p_error" clclass="cls_error"></p>
 
 </body>
 <script src="3rd/query/parse.js"></script>
@@ -59,7 +82,7 @@
                 target = target.parentNode;
             }
             
-            if ("li" === target.class) {
+            if ("list" === target.getAttribute('class')) {
                 
                 var item = datas[target.idx]
                 var toURL = BDURLParser.buildURL("download.html", item);
@@ -78,9 +101,9 @@
                 var item = datas[idx];
                 
                 var li = document.createElement("li")
+                li.setAttribute('class', 'list')
                 li.innerText = item.name
                 li.idx = idx
-                li.class = "li"
                 fragment.appendChild(li)
                 
             }
