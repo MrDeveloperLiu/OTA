@@ -31,13 +31,13 @@
 				<key>bundle-identifier</key>
 				<string>com.edaijia.enterprise</string>
 				<key>bundle-version</key>
-				<string>9.9.2</string>
+				<string>9.9.5</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>platform-identifier</key>
 				<string>com.apple.platform.iphoneos</string>
 				<key>title</key>
-				<string>e代驾</string>
+				<string>edaijia</string>
 			</dict>
 		</dict>
 	</array>

@@ -15,7 +15,6 @@
         <p id="title" style="width:100%"></p>
         <p id="info" style="width:100%"></p>
         <p id="machine" style="width:100%"></p>
-        <p id="agent" style="width:100%"></p>
     </div>
     
     <div style="text-align:center;font-family:PingFangSC-Regular;font-size:16px;" id="install">
@@ -77,8 +76,6 @@
         document.getElementById("title").innerText = name
         document.getElementById("info").innerText = "版本:" + version + "  " + "bundle-id:" + bundleId
                         
-        var userAgent = navigator.userAgent
-        document.getElementById("agent").innerText = userAgent
         
         appURL = software
 
