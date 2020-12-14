@@ -33,13 +33,6 @@
 <script>
     var appURL = null
     var platform = 0
-            
-    document.addEventListener("readystatechange", function (e) {
-        if (e.target.readyState === 'complete') {
-            loadDevice();
-            loadInfo()
-        }
-    })
 
     function loadDevice() {
         var userAgent = navigator.userAgent
@@ -102,5 +95,9 @@
             window.alert('sorry 目前仅支持 iPhone设备与android设备')
         }
     }
+
+    loadDevice();
+    loadInfo()
+
 </script>
 </html>
