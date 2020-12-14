@@ -43,32 +43,31 @@
 </body>
 <script src="3rd/query/parse.js"></script>
 <script>
-    var dataURL = "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/data/list.json"
     var datas = null
             
-    document.addEventListener("readystatechange", function (e) {
-        if (e.target.readyState === 'complete') {
-            loadInfo()
-        }
-    })
-
     function loadInfo() {
         try {
             var xhttp = new XMLHttpRequest()
-            xhttp.open("GET", dataURL, true)
-            xhttp.onreadystatechange = function() {
-              if (xhttp.readyState == 4){
-                  var hrep = xhttp.status + '|' + xhttp.responseText
-                  console.log(hrep)
-                  if (xhttp.status == 200){
-                      loadAppInfo(xhttp.responseText)
-                  }else{
-                      document.getElementById("p_error").innerText = hrep
-                  }
-              }
-            };
+            xhttp.open("GET", "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/data/list.json", true)
+            xhttp.onload = function(e) {
+                var hrep = this.status + '|' + this.responseText
+                if (this.status == 200 || this.status == 304){
+                    loadAppInfo(this.responseText)
+                }else{
+                    document.getElementById("p_error").innerText = hrep
+                }
+                console.log(hrep)
+            }
+            xhttp.ontimeout = function(e) {
+                document.getElementById("p_error").innerText = "timeout" + JSON.stringify(e)
+            }
+            xhttp.onerror = function(e) {
+                document.getElementById("p_error").innerText = "onerror" + JSON.stringify(e)
+            }
+            xhttp.upload.onprogress = function(e) {
+                document.getElementById("p_error").innerText = "onprogress" + JSON.stringify(e)
+            }
             xhttp.send(null)
-            
         }
         catch (e) {
         
@@ -119,7 +118,7 @@
         }
     }
 
-
-
+    //load
+    loadInfo()
 </script>
 </html>
