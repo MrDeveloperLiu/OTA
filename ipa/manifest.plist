@@ -29,15 +29,15 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>cn.edaijia.android.driverclient</string>
+				<string>com.edaijia.enterprise</string>
 				<key>bundle-version</key>
-				<string>5.3.2.1</string>
+				<string>9.9.2</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>platform-identifier</key>
-				<string>android</string>
+				<string>iphoneos</string>
 				<key>title</key>
-				<string>e代驾司机端</string>
+				<string>e代驾</string>
 			</dict>
 		</dict>
 	</array>
