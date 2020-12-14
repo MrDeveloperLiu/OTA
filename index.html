@@ -47,28 +47,27 @@
             
     function loadInfo() {
         try {
-            var xhttp = new XMLHttpRequest()
-            //xhttp.withCredentials = true
-            xhttp.open("GET", "https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/data/list.json", true)
-            xhttp.onload = function(e) {
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', 'https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/list.json', true)            
+            xhr.onload = function(e) {
                 var hrep = this.status + '|' + this.responseText
                 if (this.status == 200 || this.status == 304){
                     loadAppInfo(this.responseText)
                 }else{
-                    document.getElementById("p_error").innerText = hrep
+                    document.getElementById('p_error').innerText = hrep
                 }
                 console.log(hrep)
             }
-            xhttp.ontimeout = function(e) {
-                document.getElementById("p_error").innerText = "timeout" + JSON.stringify(e)
+            xhr.ontimeout = function(e) {
+                document.getElementById('p_error').innerText = 'timeout-' + JSON.stringify(e)
             }
-            xhttp.onerror = function(e) {
-                document.getElementById("p_error").innerText = "onerror" + JSON.stringify(e)
+            xhr.onerror = function(e) {
+                document.getElementById('p_error').innerText = 'onerror-' + JSON.stringify(e)
             }
-            xhttp.upload.onprogress = function(e) {
-                document.getElementById("p_error").innerText = "onprogress" + JSON.stringify(e)
+            xhr.upload.onprogress = function(e) {
+                document.getElementById('p_error').innerText = 'onprogress-' + JSON.stringify(e)
             }
-            xhttp.send(null)
+            xhr.send('')
         }
         catch (e) {
         
