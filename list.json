@@ -2,9 +2,9 @@
  {
     "id":"0",
     "name":"e代驾",
-    "icon":"icon/edaijia.57x57.png",
+    "icon":"edaijia.57x57.png",
     "version":"9.9.2",
-    "bundle":"com.edaijia.edaijia",
+    "bundle":"daijia-b",
     "tm":0,
     "info":"",
     "url":"https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/manifest.plist"
@@ -12,9 +12,9 @@
  {
     "id":"1",
     "name":"e代驾司机端",
-    "icon":"icon/edaijia.57x57.png",
+    "icon":"edaijia.57x57.png",
     "version":"5.3.2.1",
-    "bundle":"",
+    "bundle":"siji-b",
     "tm":0,
     "info":"",
     "url":"https://raw.githubusercontent.com/MrDeveloperLiu/OTA/master/edaijia_driver_android_5.3.2.1_20201109.apk"

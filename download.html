@@ -89,7 +89,8 @@
                 
         if (platform == 1)
         {
-            window.location.href = ("itms-services://?action=download-manifest&url=" + appURL)
+            var toURL = "itms-services://?action=download-manifest&url=" + appURL
+            window.location.href = toURL
         }
         else if (platform == 2)
         {
@@ -97,7 +98,7 @@
         }
         else
         {
-            window.alert('sorry 目前仅支持 iPhone设备与android设备');
+            window.alert('sorry 目前仅支持 iPhone设备与android设备')
         }
     }
 </script>
